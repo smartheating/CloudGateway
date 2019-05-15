@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: zuulproxy
+
+server:
+  port: ${PORT:9001}
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka/
+      enabled: true
+  instance:
+    preferIpAddress: true
+  
+zuul:
+  routes:
+    eureka:
+      path: /eureka/**
+      url: http://localhost:9000
+    testservice:
+      path: /testservice/**
+      url: http://localhost:9010
