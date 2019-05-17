@@ -21,3 +21,6 @@ zuul:
     testservice:
       path: /testservice/**
       url: http://localhost:9010
+    repositoryservice:
+      path: /repositoryservice/**
+      url: http://localhost:9011
