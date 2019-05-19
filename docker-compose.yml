@@ -1,0 +1,14 @@
+version: '3.7'
+
+services: 
+  test-service:
+    image: cloudgateway
+    ports:
+      - 9001:9001
+    container_name: cloudgateway
+    hostname: cloudgateway
+
+networks:
+  default:
+    external:
+      name: smartheating

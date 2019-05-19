@@ -1,9 +1,15 @@
 spring:
   application:
     name: zuulproxy
+  profiles:
+    active: "dev"
 
 server:
   port: ${PORT:9001}
+
+---
+spring:
+  profiles: dev
   
 eureka:
   client:
@@ -12,7 +18,7 @@ eureka:
     enabled: true
   instance:
     preferIpAddress: true
-  
+    
 zuul:
   routes:
     eureka:
@@ -24,3 +30,27 @@ zuul:
     repositoryservice:
       path: /repositoryservice/**
       url: http://localhost:9011
+      
+---
+spring:
+  profiles: docker
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://serviceregistration:9000/eureka/
+    enabled: true
+  instance:
+    preferIpAddress: true
+    
+zuul:
+  routes:
+    eureka:
+      path: /eureka/**
+      url: http://serviceregistration:9000
+    testservice:
+      path: /testservice/**
+      url: http://testservice:9010
+    repositoryservice:
+      path: /repositoryservice/**
+      url: http://repository:9011
