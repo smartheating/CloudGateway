@@ -2,6 +2,9 @@ version: '3.7'
 
 services: 
   test-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: cloudgateway
     ports:
       - 9001:9001
