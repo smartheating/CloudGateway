@@ -30,6 +30,9 @@ zuul:
     repositoryservice:
       path: /repositoryservice/**
       url: http://localhost:9011
+    planingservice:
+      path: /planingservice/**
+      url: http://localhost:9012
       
 ---
 spring:
@@ -54,3 +57,6 @@ zuul:
     repositoryservice:
       path: /repositoryservice/**
       url: http://repository:9011
+    planingservice:
+      path: /planingservice/**
+      url: http://planing:9012
