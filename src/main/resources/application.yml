@@ -58,10 +58,10 @@ zuul:
       path: /testservice/**
       url: http://testservice:9010
     repositoryservice:
-      path: /repositoryservice/**
+      path: /repository/**
       url: http://repository:9011
     planingservice:
-      path: /planingservice/**
+      path: /planing/**
       url: http://planing:9012
     inputadapter:
       path: /inputadapter/**
