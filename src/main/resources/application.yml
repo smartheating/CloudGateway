@@ -1,6 +1,6 @@
 spring:
   application:
-    name: zuulproxy
+    name: zuul
   profiles:
     active: "dev"
 
@@ -24,15 +24,18 @@ zuul:
     eureka:
       path: /eureka/**
       url: http://localhost:9000
-    testservice:
+    testservce:
       path: /testservice/**
       url: http://localhost:9010
-    repositoryservice:
-      path: /repositoryservice/**
+    repository:
+      path: /repository/**
       url: http://localhost:9011
-    planingservice:
-      path: /planingservice/**
+    planing:
+      path: /planing/**
       url: http://localhost:9012
+    inputadapter:
+      path: /inputadapter/**
+      url: http://localhost:9013
       
 ---
 spring:
@@ -60,3 +63,6 @@ zuul:
     planingservice:
       path: /planingservice/**
       url: http://planing:9012
+    inputadapter:
+      path: /inputadapter/**
+      url: http://inputadapter:9013
