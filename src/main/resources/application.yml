@@ -36,6 +36,9 @@ zuul:
     inputadapter:
       path: /inputadapter/**
       url: http://localhost:9013
+    preprocessing:
+      path: /preprocessing/**
+      url: http://localhost:9014
       
 ---
 spring:
@@ -66,3 +69,6 @@ zuul:
     inputadapter:
       path: /inputadapter/**
       url: http://inputadapter:9013
+    preprocessing:
+      path: /preprocessing/**
+      url: http://preprocessing:9014
