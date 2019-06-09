@@ -1,11 +1,29 @@
 spring:
   application:
-    name: zuul
+    name: cloudgateway
   profiles:
     active: "dev"
 
 server:
   port: ${PORT:9001}
+  
+zuul:
+  routes:
+    testservce:
+      path: /testservice/**
+      serviceId: testservice
+    repository:
+      path: /repository/**
+      serviceId: repository
+    planing:
+      path: /planing/**
+      serviceId: planing
+    inputadapter:
+      path: /inputadapter/**
+      serviceId: inputadapter
+    preprocessing:
+      path: /preprocessing/**
+      serviceId: preprocessing
 
 ---
 spring:
@@ -16,6 +34,7 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:9000/eureka/
     enabled: true
+    fetchRegistry: true
   instance:
     preferIpAddress: true
     
@@ -24,21 +43,6 @@ zuul:
     eureka:
       path: /eureka/**
       url: http://localhost:9000
-    testservce:
-      path: /testservice/**
-      url: http://localhost:9010
-    repository:
-      path: /repository/**
-      url: http://localhost:9011
-    planing:
-      path: /planing/**
-      url: http://localhost:9012
-    inputadapter:
-      path: /inputadapter/**
-      url: http://localhost:9013
-    preprocessing:
-      path: /preprocessing/**
-      url: http://localhost:9014
       
 ---
 spring:
@@ -57,18 +61,3 @@ zuul:
     eureka:
       path: /eureka/**
       url: http://serviceregistration:9000
-    testservice:
-      path: /testservice/**
-      url: http://testservice:9010
-    repositoryservice:
-      path: /repository/**
-      url: http://repository:9011
-    planingservice:
-      path: /planing/**
-      url: http://planing:9012
-    inputadapter:
-      path: /inputadapter/**
-      url: http://inputadapter:9013
-    preprocessing:
-      path: /preprocessing/**
-      url: http://preprocessing:9014
