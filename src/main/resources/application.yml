@@ -61,3 +61,21 @@ zuul:
     eureka:
       path: /eureka/**
       url: http://serviceregistration:9000
+      
+---
+spring:
+  profiles: aws
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${SERVICE_REGISTRATION_PRIVATE_IP}:9000/eureka/
+    enabled: true
+  instance:
+    preferIpAddress: true
+    
+zuul:
+  routes:
+    eureka:
+      path: /eureka/**
+      url: http://${SERVICE_REGISTRATION_PRIVATE_IP}:9000
