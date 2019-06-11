@@ -18,9 +18,9 @@ zuul:
     planing:
       path: /planing/**
       serviceId: planing
-#    inputadapter:
-#      path: /inputadapter/**
-#      serviceId: inputadapter
+    inputadapter:
+      path: /inputadapter/**
+      serviceId: inputadapter
     preprocessing:
       path: /preprocessing/**
       serviceId: preprocessing
@@ -79,6 +79,6 @@ zuul:
     eureka:
       path: /eureka/**
       url: http://${SERVICE_REGISTRATION_PRIVATE_IP}:9000
-    inputadapter:
-      path: /inputadapter/**
-      url: http://172.31.37.178:9013
+#    inputadapter:
+#      path: /inputadapter/**
+#      url: http://172.31.37.178:9013
