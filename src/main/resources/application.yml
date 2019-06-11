@@ -72,7 +72,7 @@ eureka:
       defaultZone: http://${SERVICE_REGISTRATION_PRIVATE_IP}:9000/eureka/
     enabled: true
   instance:
-    preferIpAddress: true
+    preferIpAddress: false
     
 zuul:
   routes:
