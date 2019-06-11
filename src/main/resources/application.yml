@@ -72,13 +72,11 @@ eureka:
       defaultZone: http://${SERVICE_REGISTRATION_PRIVATE_IP}:9000/eureka/
     enabled: true
   instance:
-    preferIpAddress: false
+    preferIpAddress: true
+    homePageUrl: http://${PRIVATE_IP}:9011/
     
 zuul:
   routes:
     eureka:
       path: /eureka/**
       url: http://${SERVICE_REGISTRATION_PRIVATE_IP}:9000
-#    inputadapter:
-#      path: /inputadapter/**
-#      url: http://172.31.37.178:9013
