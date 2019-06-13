@@ -80,3 +80,6 @@ zuul:
     eureka:
       path: /eureka/**
       url: http://${SERVICE_REGISTRATION_PRIVATE_IP}:9000
+    rabbitui:
+      path: /rabbitmq/**
+      url: http://${RABBITMQ_PRIVATE_IP}:15672
