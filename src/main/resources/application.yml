@@ -24,6 +24,9 @@ zuul:
     preprocessing:
       path: /preprocessing/**
       serviceId: preprocessing
+    outputadapter:
+      path: /outputadapter/**
+      serviceId: outputadapter
 
 ---
 spring:
